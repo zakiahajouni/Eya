@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Fullname</th> <th>Gender</th> <th>BirthDate</th> </tr>
+    </thead>
+    <tbody *ngFor="let patient of patient">
+
+    <tr >
+    <td>{{patient.idPatient}}</td>
+    <td>{{patient.nomPatient}}</td>
+    <td>{{patient.genderPatient}}</td>
+    <td>{{patient.birthDate  | date:'dd/MM/yyyy'}}</td>
+    <td><a class="btn btn-danger" (click)="supprimerPatient(patient)">Delete</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updatePatient',patient.idPatient]">Modify</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
